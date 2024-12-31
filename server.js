@@ -2,6 +2,7 @@ import express from "express";
 import connectDB from "./Configs/database.js";
 import { carRouter } from "./Routes/CarRoute.js";
 import { UserRouter } from "./Routes/UserRoute.js";
+import { BookingRouter } from "./Routes/BookingRoute.js";
 import cors from "cors";
 
 const app = express();
@@ -23,6 +24,7 @@ app.use(express.json());
 // Sử dụng các route liên quan đến xe
 app.use("/api/", carRouter);
 app.use("/api/", UserRouter);
+app.use("/api/booking", BookingRouter);
 
 // Khởi động server
 app.listen(port, () => {

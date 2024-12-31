@@ -3,11 +3,16 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 let CarSchema = new Schema({
-  name: String,
-  image: String,
-  rentPerHour: Number,
-  fuelType: String,
-  bookedTimeSlots: [String],
+  name: { type: String },
+  image: { type: String },
+  rentPerHour: { type: Number },
+  fuelType: { type: String },
+  bookedTimeSlots: [
+    {
+      from: { type: String },
+      to: { type: String },
+    },
+  ],
   capacity: Number,
 });
 

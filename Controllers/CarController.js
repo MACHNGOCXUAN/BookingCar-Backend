@@ -6,7 +6,7 @@ const createCar = async (req, res) => {
     const savedCar = await newCar.save();
     res.status(201).json(savedCar);
   } catch (error) {
-    res.status(500).json({ message: "Failed to create car", error });
+    res.status(500).json({ error: "Failed to create car", error });
   }
 };
 
@@ -17,7 +17,7 @@ const getAllCar = async (req, res) => {
       res.status(200).json(cars);
     }, 100);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({ error: error.message });
   }
 };
 
